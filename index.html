@@ -1,37 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>pknelakuditi.GitHub.io by pknelakuditi</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>pknelakuditi.GitHub.io by pknelakuditi</title>
   </head>
+
   <body>
 
-      <header>
+    <header>
+      <div class="container">
         <h1>pknelakuditi.GitHub.io</h1>
-        <p></p>
-      </header>
+        <h2></h2>
 
-      <div id="banner">
-        <span id="logo"></span>
+        <section id="downloads">
+          <a href="https://github.com/pknelakuditi" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-        <a href="https://github.com/pknelakuditi" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
+    <div class="container">
+      <section id="main_content">
         <h2>
 <a id="breadth-first-search-" class="anchor" href="#breadth-first-search-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Breadth First Search :</h2>
 
@@ -217,8 +211,6 @@ visited[start] <span class="pl-ko">=</span> <span class="pl-c1">true</span>;
 <h2>
 <a id="range-minimum-query-rmq" class="anchor" href="#range-minimum-query-rmq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Range Minimum Query (RMQ)</h2>
 
-<hr>
-
 <p>description: on arrays to find the position of an element with the minimum value between two specified indices.</p>
 
 <p>Algo:
@@ -279,8 +271,6 @@ else move both pointers to next height segment to their resoectice parents</p>
 <h2>
 <a id="range-sum-query" class="anchor" href="#range-sum-query" aria-hidden="true"><span class="octicon octicon-link"></span></a>Range Sum Query:</h2>
 
-<hr>
-
 <p>a[] =original array
 b[] =cumative sum array</p>
 
@@ -327,41 +317,231 @@ b[] =cumative sum array</p>
 <a href="http://pdf.aminer.org/001/073/976/a_new_data_structure_for_cumulative_frequency_tables.pdf">http://pdf.aminer.org/001/073/976/a_new_data_structure_for_cumulative_frequency_tables.pdf</a>  </p>
 
 <h2>
-<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>TO DO:</h2>
+<a id="dynamic-programming" class="anchor" href="#dynamic-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dynamic Programming</h2>
 
-<p>basic:</p>
-
-<p><a href="http://www.spoj.com/problems/FCTRL/">http://www.spoj.com/problems/FCTRL/</a>
-<a href="http://www.spoj.com/problems/BSEARCH1/">http://www.spoj.com/problems/BSEARCH1/</a>
-<a href="http://www.spoj.com/problems/HANGOVER/">http://www.spoj.com/problems/HANGOVER/</a>
-<a href="http://www.spoj.com/problems/PALIN/">http://www.spoj.com/problems/PALIN/</a>
-spoj.com/problems/TEST
-spoj.com/problems/ADDREV
-spoj.com/problems/PRIME1</p>
-
-<p><a href="http://www.spoj.com/problems/ANARC09C/">http://www.spoj.com/problems/ANARC09C/</a></p>
-
-<p>for disjoint sets
-<a href="http://goo.gl/e9h857">http://goo.gl/e9h857</a>
-<a href="http://goo.gl/orqp9H">http://goo.gl/orqp9H</a></p>
+<p>optimization approach that transforms a complex problem into a sequence of simpler problems.</p>
 
 <ul>
-<li>suffix tree,suffix array</li>
-<li>segment tree(intialize and use for range minimum query problem 
-result in O(N) prepocessing and O(log(N)) query processing </li>
+<li>
+<strong>Longest Increasing subsequence</strong> :</li>
 </ul>
 
-<p>finding median in unsorted array :</p>
+<div class="highlight highlight-java"><pre><span class="pl-s">private</span> <span class="pl-s">static</span> <span class="pl-s">int</span> lis(<span class="pl-s">int</span>[] arr) {
+        <span class="pl-s">int</span> max<span class="pl-ko">=</span><span class="pl-cn">1</span>;
+        mem<span class="pl-ko">=</span><span class="pl-k">new</span> <span class="pl-s">int</span>[arr<span class="pl-ko">.</span>length];
+        <span class="pl-s">Arrays</span><span class="pl-ko">.</span>fill(mem, <span class="pl-cn">1</span>);
+        <span class="pl-k">for</span>(<span class="pl-s">int</span> i<span class="pl-ko">=</span><span class="pl-cn">1</span>;i<span class="pl-ko">&lt;</span>arr<span class="pl-ko">.</span>length;i<span class="pl-ko">++</span>){
+            <span class="pl-k">for</span>(<span class="pl-s">int</span> j<span class="pl-ko">=</span><span class="pl-cn">0</span>;j<span class="pl-ko">&lt;</span>i;j<span class="pl-ko">++</span>){
+                <span class="pl-k">if</span>(arr[j]<span class="pl-ko">&lt;</span>arr[i] <span class="pl-ko">&amp;&amp;</span> mem[i]<span class="pl-ko">&lt;</span>mem[j]<span class="pl-ko">+</span><span class="pl-cn">1</span>){
+                    mem[i]<span class="pl-ko">=</span>mem[j]<span class="pl-ko">+</span><span class="pl-cn">1</span>;
+                }
+            }
+            <span class="pl-k">if</span>(max<span class="pl-ko">&lt;</span>mem[i])max<span class="pl-ko">=</span>mem[i];
+        }
 
-<p><a href="http://discuss.codechef.com/questions/1489/find-median-in-an-unsorted-array-without-sorting-it">http://discuss.codechef.com/questions/1489/find-median-in-an-unsorted-array-without-sorting-it</a></p>
+        <span class="pl-k">return</span> max;
+    }</pre></div>
 
-<h2>
-<a id="ufpt-mega-dynamic-programming-list" class="anchor" href="#ufpt-mega-dynamic-programming-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>UFPT Mega Dynamic Programming List</h2>
+<ul>
+<li>
+<p><strong>Longest common subsequence</strong> :
+if X(i) = Y(j)
+D(i,j) =D( i-1,j-1 )+ 1
+else :
+D(i,j) =Max(D( i-1,j ),D( i,j-1 ))
+Base cases:
+D( i,0 )=D( 0,j )=0</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-s">private</span> <span class="pl-s">static</span> <span class="pl-s">int</span> lcs(<span class="pl-s">String</span> a, <span class="pl-s">String</span> b) {
+      mem <span class="pl-ko">=</span> <span class="pl-k">new</span> <span class="pl-s">int</span>[a<span class="pl-ko">.</span>length() <span class="pl-ko">+</span> <span class="pl-cn">1</span>][b<span class="pl-ko">.</span>length() <span class="pl-ko">+</span> <span class="pl-cn">1</span>];
+
+      <span class="pl-k">for</span> (<span class="pl-s">int</span> i <span class="pl-ko">=</span> <span class="pl-cn">1</span>; i <span class="pl-ko">&lt;=</span> a<span class="pl-ko">.</span>length(); i<span class="pl-ko">++</span>) {
+          <span class="pl-k">for</span> (<span class="pl-s">int</span> j <span class="pl-ko">=</span> <span class="pl-cn">1</span>; j <span class="pl-ko">&lt;=</span> b<span class="pl-ko">.</span>length(); j<span class="pl-ko">++</span>) {
+              <span class="pl-k">if</span> (a<span class="pl-ko">.</span>charAt(i <span class="pl-ko">-</span> <span class="pl-cn">1</span>) <span class="pl-ko">==</span> b<span class="pl-ko">.</span>charAt(j<span class="pl-ko">-</span><span class="pl-cn">1</span>)) {
+                  mem[i][j] <span class="pl-ko">=</span> mem[i <span class="pl-ko">-</span> <span class="pl-cn">1</span>][j <span class="pl-ko">-</span> <span class="pl-cn">1</span>] <span class="pl-ko">+</span> <span class="pl-cn">1</span>;
+              } <span class="pl-k">else</span> {
+                  mem[i][j] <span class="pl-ko">=</span> <span class="pl-s">Math</span><span class="pl-ko">.</span>max(mem[i][j <span class="pl-ko">-</span> <span class="pl-cn">1</span>], mem[i <span class="pl-ko">-</span> <span class="pl-cn">1</span>][j]);
+              }
+          }
+      }
+
+      <span class="pl-k">return</span> mem[a<span class="pl-ko">.</span>length()][b<span class="pl-ko">.</span>length()];
+  }
+</pre></div>
+</li>
+<li>
+<p><strong>Palindrome Min Insertions</strong>:
+minimum number of characters that need to be inserted to make it a palindrome</p>
+
+<ol>
+<li>
+<p>gap increasing
+D(i,j)=1+min( D(i+1,j),D(i,j-1) )       if str[i]!=str[j]
+D(i,j)=D(i+1,j-1)                       if str[i]==str[j]</p>
+
+<div class="highlight highlight-java"><pre>
+<span class="pl-s">private</span> <span class="pl-s">static</span> <span class="pl-s">int</span> minInsertPalindrome(<span class="pl-s">String</span> string) {
+    <span class="pl-k">for</span>(<span class="pl-s">int</span> gap<span class="pl-ko">=</span><span class="pl-cn">1</span>;gap<span class="pl-ko">&lt;</span>string<span class="pl-ko">.</span>length();gap<span class="pl-ko">++</span>){           
+        <span class="pl-k">for</span>(<span class="pl-s">int</span> i<span class="pl-ko">=</span><span class="pl-cn">0</span>,j<span class="pl-ko">=</span>gap;j<span class="pl-ko">&lt;</span>string<span class="pl-ko">.</span>length();i<span class="pl-ko">++</span>,j<span class="pl-ko">++</span>){
+                a[i][j] <span class="pl-ko">=</span> (string<span class="pl-ko">.</span>charAt(i) <span class="pl-ko">==</span> string<span class="pl-ko">.</span>charAt(j)) <span class="pl-k">?</span> a[i <span class="pl-ko">+</span> <span class="pl-cn">1</span>][j <span class="pl-ko">-</span> <span class="pl-cn">1</span>]<span class="pl-k">:</span> <span class="pl-s">Math</span><span class="pl-ko">.</span>min(a[i][j <span class="pl-ko">-</span> <span class="pl-cn">1</span>], a[i <span class="pl-ko">+</span> <span class="pl-cn">1</span>][j]) <span class="pl-ko">+</span> <span class="pl-cn">1</span>;
+        }
+    }
+    <span class="pl-k">return</span> a[<span class="pl-cn">0</span>][string<span class="pl-ko">.</span>length()<span class="pl-ko">-</span><span class="pl-cn">1</span>];
+}</pre></div>
+
+<p>Time complexity: O(N^2)
+Auxiliary Space: O(N^2)</p>
+</li>
+</ol>
+
+<ol>
+<li> return string.length()-lcs(string,string.reverse())</li>
+</ol>
+</li>
+<li><p><strong>Longest Subsequence Without Repetition</strong> :</p></li>
+</ul>
+
+<div class="highlight highlight-java"><pre><span class="pl-s">static</span> <span class="pl-s">int</span>[] mem <span class="pl-ko">=</span> <span class="pl-k">new</span> <span class="pl-s">int</span>[<span class="pl-cn">256</span>];
+
+    <span class="pl-s">private</span> <span class="pl-s">static</span> <span class="pl-s">int</span> longestSub(<span class="pl-s">String</span> a) {
+        <span class="pl-s">Arrays</span><span class="pl-ko">.</span>fill(mem, <span class="pl-ko">-</span><span class="pl-cn">1</span>);
+        <span class="pl-s">int</span> pIndex;
+        <span class="pl-s">int</span> current <span class="pl-ko">=</span> <span class="pl-cn">1</span>;
+        <span class="pl-s">int</span> max<span class="pl-ko">=</span><span class="pl-cn">1</span>;
+
+        mem[a<span class="pl-ko">.</span>charAt(<span class="pl-cn">0</span>)] <span class="pl-ko">=</span> <span class="pl-cn">0</span>;
+        <span class="pl-k">for</span> (<span class="pl-s">int</span> i <span class="pl-ko">=</span> <span class="pl-cn">1</span>; i <span class="pl-ko">&lt;</span> a<span class="pl-ko">.</span>length(); i<span class="pl-ko">++</span>) {
+            pIndex<span class="pl-ko">=</span>mem[a<span class="pl-ko">.</span>charAt(i)];
+            <span class="pl-c"><span class="pl-pdc">//</span>character not visited previously or it is not a part of Non repeating sequence</span>
+           <span class="pl-k">if</span>(pIndex<span class="pl-ko">==</span><span class="pl-ko">-</span><span class="pl-cn">1</span> <span class="pl-ko">||</span> i<span class="pl-ko">-</span>current<span class="pl-ko">&gt;</span>pIndex){
+               current<span class="pl-ko">++</span>;
+           }<span class="pl-k">else</span>{
+               <span class="pl-c"><span class="pl-pdc">//</span>update max value if previous current value is greater than max till then</span>
+               <span class="pl-k">if</span>(current<span class="pl-ko">&gt;</span>max){
+                   max<span class="pl-ko">=</span>current;
+               }
+               current<span class="pl-ko">=</span>i<span class="pl-ko">-</span>pIndex;
+
+           }
+           mem[a<span class="pl-ko">.</span>charAt(i)]<span class="pl-ko">=</span>i;
+        }
+         <span class="pl-k">if</span>(current<span class="pl-ko">&gt;</span>max){
+           max<span class="pl-ko">=</span>current;
+        }
+
+        <span class="pl-k">return</span> max;
+    }</pre></div>
+
+<ul>
+<li>
+<strong>Edit distance</strong>:
+T(m, n) = T(m-1, n-1) + T(m, n-1) + T(m-1, n) + C</li>
+</ul>
+
+<p>time complexity: O(mn)
+space complexity: O(mn)</p>
+
+<ul>
+<li>
+<strong>Longest common subsequence</strong> :</li>
+</ul>
+
+<pre><code></code></pre>
+<h3>
+<a id="topcoder-dp-" class="anchor" href="#topcoder-dp-" aria-hidden="true"><span class="octicon octicon-link"></span></a>TopCoder DP :</h3>
+
+<ul>
+<li>
+<strong>ZigZag Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4493&amp;pm=1259">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4493&amp;pm=1259</a>
+</li>
+<li>
+<strong>BadNeighbors Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5009&amp;pm=2402">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5009&amp;pm=2402</a>
+</li>
+<li>
+<strong>FlowerGarden Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5006&amp;pm=1918">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5006&amp;pm=1918</a>
+</li>
+<li>
+<strong>AvoidRoads Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4709&amp;pm=1889">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4709&amp;pm=1889</a>
+</li>
+<li>
+<strong>ChessMetric Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4482&amp;pm=1592">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4482&amp;pm=1592</a>
+</li>
+<li>
+<strong>Jewelry Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4705&amp;pm=1166">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4705&amp;pm=1166</a>
+</li>
+<li>
+<strong>StripePainter Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4555&amp;pm=1215">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4555&amp;pm=1215</a>
+</li>
+<li>
+<strong>QuickSums Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5072&amp;pm=2829">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5072&amp;pm=2829</a>
+</li>
+<li>
+<strong>ShortPalindromes Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4630&amp;pm=1861">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4630&amp;pm=1861</a>
+</li>
+<li>
+<strong>StarAdventure Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5854&amp;pm=2940">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=5854&amp;pm=2940</a>
+</li>
+<li>
+<p><strong>MiniPonit Problem</strong> :
+<a href="http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4710&amp;pm=1996">http://www.topcoder.com/tc?module=ProblemDetail&amp;rd=4710&amp;pm=1996</a></p>
+
+<p>Tree Dp :
+Problem: given a tree, color nodes black as many as possible without coloring two adjacent nodes
+Subproblems:
+First, we arbitrarily decide the root node 𝑟
+𝐵𝑣: the optimal solution for a subtree having 𝑣 as the root, where we color 𝑣 black
+𝑊𝑣: the optimal solution for a subtree having 𝑣 as the root, where we don’t color 𝑣
+The answer is max 𝐵𝑟,𝑊𝑟</p>
+</li>
+</ul>
+
+<p>Base case : Leaf</p>
+
+<p>Subset DP :
+Prob: given a weighted graph with 𝑛 nodes, find 
+the shortest path that visits every node exactly once 
+(Traveling Salesman Problem)</p>
+
+<p>Brute force : O(n!)
+DP          : O(pow(n,2)*pow(2,n))
+D(g,v)=min(D(g-{v},u)+cost(u,v))</p>
+
+<h4>
+<a id="ufpt-mega-dynamic-programming-list" class="anchor" href="#ufpt-mega-dynamic-programming-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>UFPT Mega Dynamic Programming List</h4>
 
 <p>Most straightforward:
-<a href="http://www.spoj.com/problems/COINS/">http://www.spoj.com/problems/COINS/</a>                                      </p>
+<a href="http://www.spoj.com/problems/COINS/">http://www.spoj.com/problems/COINS/</a> </p>
+
+<div class="highlight highlight-java"><pre><span class="pl-s">static</span> <span class="pl-s">HashMap&lt;<span class="pl-s">Integer</span>, <span class="pl-s">Long</span>&gt;</span> hm;
+
+    <span class="pl-s">public</span> <span class="pl-s">static</span> <span class="pl-s">long</span> coinsT(<span class="pl-s">int</span> i) {
+    hm <span class="pl-ko">=</span> <span class="pl-k">new</span> <span class="pl-s">HashMap&lt;<span class="pl-s">Integer</span>, <span class="pl-s">Long</span>&gt;</span>();
+        <span class="pl-k">if</span> (i <span class="pl-ko">&lt;</span> <span class="pl-cn">12</span>) {
+            <span class="pl-k">return</span> i;
+        }
+
+        <span class="pl-k">if</span> (hm<span class="pl-ko">.</span>containsKey(i)) {
+            <span class="pl-k">return</span> hm<span class="pl-ko">.</span>get(i);
+        }
+        <span class="pl-s">long</span> temp <span class="pl-ko">=</span> coinsT(i <span class="pl-ko">/</span> <span class="pl-cn">2</span>) <span class="pl-ko">+</span> coinsT(i <span class="pl-ko">/</span> <span class="pl-cn">3</span>) <span class="pl-ko">+</span> coinsT(i <span class="pl-ko">/</span> <span class="pl-cn">4</span>);
+        hm<span class="pl-ko">.</span>put(i, temp);
+        <span class="pl-k">return</span> temp;
+    }
+</pre></div>
 
 <p>More straightforward:
+<a href="http://www.spoj.com/problems/ACODE/">http://www.spoj.com/problems/ACODE/</a>     RECOMMENDED<br>
+<a href="http://www.spoj.com/problems/MIXTURES/">http://www.spoj.com/problems/MIXTURES/</a>  RECOMMENDED<br>
 <a href="http://www.spoj.com/problems/MBALL">http://www.spoj.com/problems/MBALL</a><br>
 <a href="http://www.spoj.com/problems/PARTY">http://www.spoj.com/problems/PARTY</a><br>
 <a href="http://www.spoj.com/problems/KNAPSACK/">http://www.spoj.com/problems/KNAPSACK/</a>
@@ -370,9 +550,7 @@ result in O(N) prepocessing and O(log(N)) query processing </li>
 <a href="http://www.spoj.com/problems/MMAXPER">http://www.spoj.com/problems/MMAXPER</a><br>
 <a href="http://www.spoj.com/problems/SCUBADIV/">http://www.spoj.com/problems/SCUBADIV/</a><br>
 <a href="http://www.spoj.com/problems/MINVEST">http://www.spoj.com/problems/MINVEST</a>
-<a href="http://www.spoj.com/problems/ACODE/">http://www.spoj.com/problems/ACODE/</a>     RECOMMENDED<br>
 <a href="http://www.spoj.com/problems/BYTESM2/">http://www.spoj.com/problems/BYTESM2/</a>
-<a href="http://www.spoj.com/problems/MIXTURES/">http://www.spoj.com/problems/MIXTURES/</a>  RECOMMENDED<br>
 <a href="http://www.spoj.com/problems/ROCK/">http://www.spoj.com/problems/ROCK/</a><br>
 <a href="http://www.spoj.com/problems/NY10E/">http://www.spoj.com/problems/NY10E/</a></p>
 
@@ -425,12 +603,38 @@ result in O(N) prepocessing and O(log(N)) query processing </li>
 <a href="http://www.spoj.com/problems/BYTESE1">http://www.spoj.com/problems/BYTESE1</a>
 <a href="http://www.spoj.com/problems/BITMAP">http://www.spoj.com/problems/BITMAP</a>
 <a href="http://www.spoj.com/problems/PT07Z">http://www.spoj.com/problems/PT07Z</a></p>
+
+<h2>
+<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>TO DO:</h2>
+
+<p>basic:</p>
+
+<p><a href="http://www.spoj.com/problems/FCTRL/">http://www.spoj.com/problems/FCTRL/</a>
+<a href="http://www.spoj.com/problems/BSEARCH1/">http://www.spoj.com/problems/BSEARCH1/</a>
+<a href="http://www.spoj.com/problems/HANGOVER/">http://www.spoj.com/problems/HANGOVER/</a>
+<a href="http://www.spoj.com/problems/PALIN/">http://www.spoj.com/problems/PALIN/</a>
+spoj.com/problems/TEST
+spoj.com/problems/ADDREV
+spoj.com/problems/PRIME1</p>
+
+<p><a href="http://www.spoj.com/problems/ANARC09C/">http://www.spoj.com/problems/ANARC09C/</a></p>
+
+<p>for disjoint sets
+<a href="http://goo.gl/e9h857">http://goo.gl/e9h857</a>
+<a href="http://goo.gl/orqp9H">http://goo.gl/orqp9H</a></p>
+
+<ul>
+<li>suffix tree,suffix array</li>
+<li>segment tree(intialize and use for range minimum query problem 
+result in O(N) prepocessing and O(log(N)) query processing </li>
+</ul>
+
+<p>finding median in unsorted array :</p>
+
+<p><a href="http://discuss.codechef.com/questions/1489/find-median-in-an-unsorted-array-without-sorting-it">http://discuss.codechef.com/questions/1489/find-median-in-an-unsorted-array-without-sorting-it</a></p>
       </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
